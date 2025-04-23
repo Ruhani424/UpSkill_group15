@@ -175,3 +175,71 @@
             <button class="select-plan-btn" data-plan="yearly">Yearly</button>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prices = {
+                monthly: {
+                    basic: 1600,
+                    student: 800,
+                    individual: 1200,
+                    business: 5000
+                },
+                quarterly: {
+                    basic: 4500, // 10% discount
+                    student: 2250,
+                    individual: 3300,
+                    business: 13500
+                },
+                yearly: {
+                    basic: 16000, // 20% discount
+                    student: 8000,
+                    individual: 12000,
+                    business: 48000
+                }
+            };
+
+            function updatePrices(plan) {
+                const basicPriceElement = document.getElementById('basic-price');
+                const studentPriceElement = document.getElementById('student-price');
+                const individualPriceElement = document.getElementById('individual-price');
+                const businessPriceElement = document.getElementById('business-price');
+
+                basicPriceElement.textContent = ₹{prices[plan].basic};
+                studentPriceElement.textContent = ₹{prices[plan].student};
+                individualPriceElement.textContent = ₹{prices[plan].individual};
+                businessPriceElement.textContent = ₹{prices[plan].business};
+                
+                // Animate the price change
+                basicPriceElement.classList.add('animate-price');
+                studentPriceElement.classList.add('animate-price');
+                individualPriceElement.classList.add('animate-price');
+                businessPriceElement.classList.add('animate-price');
+
+                setTimeout(() => {
+                    basicPriceElement.classList.remove('animate-price');
+                    studentPriceElement.classList.remove('animate-price');
+                    individualPriceElement.classList.remove('animate-price');
+                    businessPriceElement.classList.remove('animate-price');
+                }, 300);
+            }
+
+            const buttons = document.querySelectorAll('.select-plan-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const plan = button.getAttribute('data-plan');
+                    updatePrices(plan);
+
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+
+            // Set default prices to monthly
+            updatePrices('monthly');
+        });
+    </script>
+
+
+</body></html>
