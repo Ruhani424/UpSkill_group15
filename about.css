@@ -11,7 +11,7 @@ body {
   }
   
   .hero-section {
-    background: linear-gradient(rgba(52, 129, 151, 0.9), rgba(0, 101, 238, 0.8)),
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
                 url('/path-to-images/animal-hero.jpg') center/cover;
     color: white;
     padding: 4rem 2rem;
@@ -63,7 +63,7 @@ body {
   }
   
   .cta-section {
-    background-color: rgb(61, 166, 166);
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
     color: white;
     padding: 4rem 2rem;
     border-radius: 15px;
