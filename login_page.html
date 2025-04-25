@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-<style>
-    div {
-        background-image: linear-gradient(to top, rgb(130, 130, 171) 20%, rgb(142, 198, 198) 80%);
-        border: solid black;
-        height: 550px;
-        width: 400px;
-        margin-top: 100px;
-        margin-left: 500px;
-        box-shadow: 5px 5px 8px;
-        justify-content: center;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: larger;
-        text-align: center;
-    }
-
-    button {
-        margin-top: 30px;
-        margin-left: 150px;
-        background-color: rgb(249, 182, 13);
-    }
-</style>
-
-<body style="background-image: linear-gradient(to top, rgb(130, 130, 171) 10%, rgb(142, 198, 198) 400%);height:fit-content">
-    <div>
-        <h1>Login</h1>
-        <b>
-            First Name:<input type="text"><br>
-            Last Name:<input type="text"><br>
-            Father's Name:<input type="text"><br>
-            Mother's Name:<input type="text"><br>
-            Address:<input type="text"><br>
-            Age:<input type="number"><br><br>
-            Gender:<input type="radio" name="gender">Male
-            <input type="radio" name="gender">Female<br><br>
-            Qualification:<input type="checkbox">10<sup>th</sup>
-            <input type="checkbox">12<sup>th</sup><br><br>
-            City:
-            <select>
-                <option>Chandigarh</option>
-                <option>Mohali</option>
-                <option>Panchkula</option>
-            </select><br><br>
-            Password:<input type="password"><br><br>
-            <button style="font-size: 20px;margin-left:10px">Submit</button>
-        </b>
+<body>
+  <div class="main-container">
+    <div class="logo">
+      <!-- Your SVG logo here -->
+      <svg height="200px" width="200px" viewBox="0 0 492.481 492.481" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+        <!-- SVG paths -->
+      </svg>
+   
     </div>
+
+    <div class="login-card">
+      <h1 class="login-title">Login</h1>
+      <p class="welcome-text">Welcome Back!</p>
+      <form onsubmit="handleEvent(event)">
+        <div class="input-group">
+          <!-- Email icon -->
+          <input type="text" placeholder="Email" />
+        </div>
+        <div class="input-group">
+          <!-- Password icon -->
+          <input type="password" placeholder="Password" />
+        </div>
+        <p class="forgot-password">
+          <a href="https://codepen.io/Vignesh46/pen/RNwayaK" target="_blank">Forgot Password?</a>
+        </p>
+        <button class="login-btn">Login</button>
+      </form>
+      <p class="signup-link">
+        Don't Have an account? 
+        <a href="https://codepen.io/Vignesh46/pen/NPWNWEw" target="_blank">Sign Up</a>
+      </p>
+      <span class="divider"></span>
+      <div class="social-buttons">
+        <button class="social-btn google-btn">
+          <!-- Google icon -->
+          <span>Google</span>
+        </button>
+        <button class="social-btn facebook-btn">
+          <!-- Facebook icon -->
+          <span>Facebook</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="inspiration">
+      Inspired from 
+      <a href="https://youtu.be/7BTsepZ9xp8?si=FKKKC2QruJa_EYnc" target="_blank">GreatStack</a>
+    </p>
+  </div>
 </body>
 </html>
