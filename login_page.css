@@ -1,0 +1,144 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
+  }
+  
+  .main-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 8rem;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    color: #6366f1;
+    font-weight: bold;
+  }
+  
+  .login-card {
+    background-color: #0f172a;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 24rem;
+    color: #c7d2fe;
+    text-align: center;
+  }
+  
+  .login-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #333A5c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .input-group input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #e5e7eb;
+    flex: 1;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 1.5rem;
+  }
+  
+  .forgot-password a {
+    color: #60a5fa;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .signup-link {
+    margin-top: 1rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+  
+  .signup-link a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+  
+  .divider {
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, #0f172a, #6366f1, #0f172a);
+  }
+  
+  .social-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .social-btn {
+    background-color: #333A5c;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #c7d2fe;
+    flex: 1;
+    max-width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .inspiration {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 5rem;
+    color: #334155;
+    font-weight: 600;
+  }
+  
+  .inspiration a {
+    color: #4338ca;
+    text-decoration: underline;
+  }
