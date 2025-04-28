@@ -12,7 +12,7 @@ body {
   
   .hero-section {
     background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
-                url('/path-to-images/animal-hero.jpg') center/cover;
+                /* url('/path-to-images/animal-hero.jpg') center/cover; */
     color: white;
     padding: 4rem 2rem;
     border-radius: 15px;

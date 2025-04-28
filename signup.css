@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #197c89, #fce4ec);
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
   }
   
   /* Center the container */
