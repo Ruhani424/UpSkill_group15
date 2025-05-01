@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Language Selection Screen */
+        .language-selection {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            display: none;
+        }
+
+        .language-title {
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .language-subtitle {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .language-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .language-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #f8f9fa;
+            color: #4a5568;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .language-btn:hover {
+            transform: translateY(-3px);
+            background: #ebf4ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Quiz Screen */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .question-counter {
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        .score-container {
+            color: #48bb78;
+            font-weight: 600;
+        }
+
+        .question {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .options-container {
+            display: grid;
+            gap: 15px;
+        }
+
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+            color: #4a5568;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: #c3dafe;
+            background: #ebf4ff;
+        }
+
+        .option-btn.correct {
+            background: #48bb78 !important;
+            border-color: #48bb78 !important;
+            color: white;
+        }
+
+        .option-btn.incorrect {
+            background: #f56565 !important;
+            border-color: #f56565 !important;
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .next-btn {
+            background: #48bb78;
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 25px;
+            float: right;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .next-btn:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .language-selection, .quiz-container {
+                padding: 20px;
+            }
+
+            .language-title {
+                font-size: 1.5rem;
+            }
+
+            .question {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selection" id="language-selection">
+        <h1 class="language-title">CodeMaster Quiz</h1>
+        <p class="language-subtitle">Select a programming language to test your knowledge</p>
+        
+        <div class="language-buttons">
+            <button class="language-btn" data-language="javascript">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="language-icon" />
+                JavaScript
+            </button>
+            <button class="language-btn" data-language="python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="language-icon" />
+                Python
+            </button>
+            <button class="language-btn" data-language="html-css">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="language-icon" />
+                HTML/CSS
+            </button>
+            <button class="language-btn" data-language="java">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="language-icon" />
+                Java
+            </button>
+        </div>
+    </div>
+
+    <div class="quiz-container" id="quiz-container">
+        <div class="quiz-header">
+            <div class="question-counter">Question 1</div>
+            <div class="score-container">Score: 0</div>
+        </div>
+
+        <div class="question" id="question"></div>
+
+        <div class="options-container" id="options-container"></div>
+
+        <button class="next-btn" id="next-btn">Next Question →</button>
+    </div>
+
+    <script>
+        // DOM Elements
+        const languageSelection = document.getElementById('language-selection');
+        const quizContainer = document.getElementById('quiz-container');
+        const questionEl = document.getElementById('question');
+        const optionsContainer = document.getElementById('options-container');
+        const nextBtn = document.getElementById('next-btn');
+        const questionCounter = document.querySelector('.question-counter');
+        const scoreEl = document.querySelector('.score-container');
+    
+        // Quiz State
+        let quizData; // Will hold the fetched data
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let currentQuestions = [];
+        let selectedLanguage = '';
+    
+        // Fetch the JSON file when the page loads
+        fetch('quizData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load quiz data');
+                }
+                return response.json();
+            })
+            .then(data => {
+                quizData = data;
+                
+                document.querySelectorAll('.language-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        selectedLanguage = btn.dataset.language;
+                        languageSelection.style.display = 'none';
+                        quizContainer.style.display = 'block';
+                        currentQuestions = [...quizData[selectedLanguage]];
+                        shuffleArray(currentQuestions);
+                        resetQuiz();
+                        showQuestion(currentQuestions[currentQuestionIndex]);
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error loading quiz data:', error);
+                alert('Failed to load quiz data. Please try again later.');
+            });
+    
+        // Event Listener for Next Button
+        nextBtn.addEventListener('click', handleNextQuestion);
+    
+        // Functions (unchanged from original)
+        function resetQuiz() {
+            score = 0;
+            currentQuestionIndex = 0;
+            scoreEl.textContent = Score: ${score};
+        }
+    
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    
+        function showQuestion(question) {
+            questionEl.textContent = question.question;
+            optionsContainer.innerHTML = '';
+            questionCounter.textContent = Question ${currentQuestionIndex + 1};
+            nextBtn.style.display = 'none';
+    
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn');
+                button.textContent = option;
+                button.addEventListener('click', () => selectAnswer(index, question.correct));
+                optionsContainer.appendChild(button);
+            });
+        }
+    
+        function selectAnswer(selectedIndex, correctIndex) {
+            const options = document.querySelectorAll('.option-btn');
+            options.forEach(option => option.disabled = true);
+    
+            if (selectedIndex === correctIndex) {
+                options[selectedIndex].classList.add('correct');
+                score++;
+                scoreEl.textContent = Score: ${score};
+            } else {
+                options[selectedIndex].classList.add('incorrect');
+                options[correctIndex].classList.add('correct');
+            }
+    
+            nextBtn.style.display = 'block';
+        }
+    
+        function handleNextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex >= currentQuestions.length) {
+                currentQuestionIndex = 0;
+                shuffleArray(currentQuestions);
+            }
+    
+            showQuestion(currentQuestions[currentQuestionIndex]);
+        }
+    </script>
+</body>
+</html>
