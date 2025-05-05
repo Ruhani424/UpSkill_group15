@@ -286,7 +286,7 @@
         function resetQuiz() {
             score = 0;
             currentQuestionIndex = 0;
-            scoreEl.textContent = Score: ${score};
+            scoreEl.textContent = `Score: ${score}`;
         }
     
         function shuffleArray(array) {
@@ -299,7 +299,7 @@
         function showQuestion(question) {
             questionEl.textContent = question.question;
             optionsContainer.innerHTML = '';
-            questionCounter.textContent = Question ${currentQuestionIndex + 1};
+            questionCounter.textContent = `Question ${currentQuestionIndex + 1}`;
             nextBtn.style.display = 'none';
     
             question.options.forEach((option, index) => {
@@ -318,7 +318,7 @@
             if (selectedIndex === correctIndex) {
                 options[selectedIndex].classList.add('correct');
                 score++;
-                scoreEl.textContent = Score: ${score};
+                scoreEl.textContent = `Score: ${score}`;
             } else {
                 options[selectedIndex].classList.add('incorrect');
                 options[correctIndex].classList.add('correct');
