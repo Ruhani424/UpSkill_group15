@@ -1,0 +1,136 @@
+{
+    "javascript": [
+      {
+        "question": "Which keyword is used to declare a variable in JavaScript?",
+        "options": ["var", "let", "const", "All of these"],
+        "correct": 3,
+        "difficulty": "easy"
+      },
+      {
+        "question": "What does 'DOM' stand for in JavaScript?",
+        "options": ["Document Object Model", "Data Object Management", "Digital Output Module", "Display Object Manipulation"],
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "question": "Which method converts JSON string to a JavaScript object?",
+        "options": ["JSON.parse()", "JSON.stringify()", "JSON.convert()", "JSON.toObject()"],
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "question": "What will 'console.log(typeof null)' output?",
+        "options": ["null", "undefined", "object", "number"],
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "question": "Which of these is NOT a JavaScript framework?",
+        "options": ["React", "Angular", "Django", "Vue"],
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "question": "What is a closure in JavaScript?",
+        "options": ["A function with no parameters", "A function that retains access to its outer scope", "A loop structure", "A built-in method"],
+        "correct": 1,
+        "difficulty": "hard"
+      },
+      {
+        "question": "What does 'NaN' stand for?",
+        "options": ["Not a Number", "New and Notable", "Null and None", "Number and Null"],
+        "correct": 0,
+        "difficulty": "medium"
+      }
+    ],
+    "python": [
+      {
+        "question": "How do you create a list in Python?",
+        "options": ["{1,2,3}", "(1,2,3)", "[1,2,3]", "{{1,2,3}}"],
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["function", "def", "define", "func"],
+        "correct": 1,
+        "difficulty": "easy"
+      },
+      {
+        "question": "What is the output of 'print(3 * '7')' in Python?",
+        "options": ["21", "777", "Error", "37"],
+        "correct": 1,
+        "difficulty": "medium"
+      },
+      {
+        "question": "Which of these is used for virtual environments in Python?",
+        "options": ["venv", "virtualenv", "pipenv", "All of these"],
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "question": "How do you handle exceptions in Python?",
+        "options": ["if-else", "try-except", "catch-error", "do-while"],
+        "correct": 1,
+        "difficulty": "medium"
+      }
+    ],
+    "html-css": [
+      {
+        "question": "What does CSS stand for?",
+        "options": ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style System", "Colorful Style Syntax"],
+        "correct": 0,
+        "difficulty": "easy"
+      },
+      {
+        "question": "Which HTML tag is used for creating a hyperlink?",
+        "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+        "correct": 1,
+        "difficulty": "easy"
+      },
+      {
+        "question": "Which CSS property controls text size?",
+        "options": ["font-style", "text-size", "font-size", "text-style"],
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "question": "What does HTML stand for?",
+        "options": ["Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Markup Language", "Hyper Text Markup Leveler"],
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "question": "Which CSS selector targets an element by its ID?",
+        "options": [".id", "#id", "id", "*id"],
+        "correct": 1,
+        "difficulty": "easy"
+      }
+    ],
+    "java": [
+      {
+        "question": "Which keyword is used to define a constant in Java?",
+        "options": ["const", "final", "static", "constant"],
+        "correct": 1,
+        "difficulty": "easy"
+      },
+      {
+        "question": "What is the default value of an int variable in Java?",
+        "options": ["0", "1", "null", "undefined"],
+        "correct": 0,
+        "difficulty": "easy"
+      },
+      {
+        "question": "Which collection implements a dynamic array in Java?",
+        "options": ["HashSet", "LinkedList", "ArrayList", "TreeMap"],
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "question": "What is the purpose of the 'public' keyword in Java?",
+        "options": ["Restrict access", "Allow access from anywhere", "Define a variable", "Create a loop"],
+        "correct": 1,
+        "difficulty": "easy"
+      }
+    ]
+  }
