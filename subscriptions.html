@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0138)file:///Users/ruhanisachdeva/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/EC061C3E-9C7C-4B26-A56D-F80E3F3AFCCB/pricing.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <style>
+        /* CSS for the pricing cards and buttons */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Style for the heading */
+        .pricing-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3e3eb6;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(to right, #2a3288, #4768c1);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            animation: headingAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes headingAnimation {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-10px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .pricing-card {
+            background-color: #dae2e4;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 240px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        .pricing-card h3 {
+            color: #2a3288;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-size: 1.6rem;
+            color: #2a3288;
+            margin: 0.5rem 0;
+        }
+        .price-value {
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .select-plan-btn {
+            background-color: #2a3288;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            margin: 0.3rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+        .select-plan-btn:hover {
+            background-color: #53adbb;
+        }
+        .select-plan-btn.active {
+            background-color: #53adbb;
+            font-weight: bold;
+        }
+        @keyframes priceChange {
+            from {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .animate-price {
+            animation: priceChange 0.3s ease-in-out;
+        }
+        .pricing-card p {
+            font-size: 1rem;
+            color: #333;
+        }
+        .highlight {
+            font-size: 1.2rem;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pricing-heading">
+        Our Pricing Plans
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <div class="price">
+                <span id="basic-price" class="price-value">₹1600</span>
+                <span class="price-period">/ month</span>
+            </div>
+            <p>Perfect for individuals who need basic access to our content.</p>
+            <button class="select-plan-btn" data-plan="monthly">Monthly</button>
+            <button class="select-plan-btn" data-plan="quarterly">Quarterly</button>
+            <button class="select-plan-btn" data-plan="yearly">Yearly</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Student Plan</h3>
+            <div class="price">
+                <span id="student-price" class="price-value">₹800</span>
+                <span class="price-period">/ month</span>
+            </div>
+            <p>Affordable pricing for students looking to learn and grow.</p>
+            <button class="select-plan-btn" data-plan="monthly">Monthly</button>
+            <button class="select-plan-btn" data-plan="quarterly">Quarterly</button>
+            <button class="select-plan-btn" data-plan="yearly">Yearly</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Individual Plan</h3>
+            <div class="price">
+                <span id="individual-price" class="price-value">₹1200</span>
+                <span class="price-period">/ month</span>
+            </div>
+            <p>Great for personal learners who want full access to all resources.</p>
+            <button class="select-plan-btn" data-plan="monthly">Monthly</button>
+            <button class="select-plan-btn" data-plan="quarterly">Quarterly</button>
+            <button class="select-plan-btn" data-plan="yearly">Yearly</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Business Plan</h3>
+            <div class="price">
+                <span id="business-price" class="price-value">₹5000</span>
+                <span class="price-period">/ month</span>
+            </div>
+            <p>Designed for businesses looking to upskill their teams.</p>
+            <button class="select-plan-btn" data-plan="monthly">Monthly</button>
+            <button class="select-plan-btn" data-plan="quarterly">Quarterly</button>
+            <button class="select-plan-btn" data-plan="yearly">Yearly</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prices = {
+                monthly: {
+                    basic: 1600,
+                    student: 800,
+                    individual: 1200,
+                    business: 5000
+                },
+                quarterly: {
+                    basic: 4500, // 10% discount
+                    student: 2250,
+                    individual: 3300,
+                    business: 13500
+                },
+                yearly: {
+                    basic: 16000, // 20% discount
+                    student: 8000,
+                    individual: 12000,
+                    business: 48000
+                }
+            };
+
+            function updatePrices(plan) {
+                const basicPriceElement = document.getElementById('basic-price');
+                const studentPriceElement = document.getElementById('student-price');
+                const individualPriceElement = document.getElementById('individual-price');
+                const businessPriceElement = document.getElementById('business-price');
+
+                basicPriceElement.textContent = ₹{prices[plan].basic};
+                studentPriceElement.textContent = ₹{prices[plan].student};
+                individualPriceElement.textContent = ₹{prices[plan].individual};
+                businessPriceElement.textContent = ₹{prices[plan].business};
+                
+                // Animate the price change
+                basicPriceElement.classList.add('animate-price');
+                studentPriceElement.classList.add('animate-price');
+                individualPriceElement.classList.add('animate-price');
+                businessPriceElement.classList.add('animate-price');
+
+                setTimeout(() => {
+                    basicPriceElement.classList.remove('animate-price');
+                    studentPriceElement.classList.remove('animate-price');
+                    individualPriceElement.classList.remove('animate-price');
+                    businessPriceElement.classList.remove('animate-price');
+                }, 300);
+            }
+
+            const buttons = document.querySelectorAll('.select-plan-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const plan = button.getAttribute('data-plan');
+                    updatePrices(plan);
+
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+
+            // Set default prices to monthly
+            updatePrices('monthly');
+        });
+    </script>
+
+
+</body></html>

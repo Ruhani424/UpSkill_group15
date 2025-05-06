@@ -1,0 +1,74 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to top, rgb(130, 130, 171) 0%, rgb(142, 198, 198) 100%);
+  }
+  
+  /* Center the container */
+  .login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* Container styling */
+  .login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    height: 270px;
+  }
+  
+  /* Inner text styles */
+  .small-container h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .small-container p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  
+  /* Card layout */
+  .login-options {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-card {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .login-card:hover {
+    background-color: #e1f5fe;
+    border-color: #4d90fe;
+  }
+  
+  /* Image icon styling */
+  .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
